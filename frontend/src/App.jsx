@@ -3,18 +3,23 @@ import Lenis from 'lenis';
 import { motion, AnimatePresence } from 'framer-motion';
 import GrainOverlay from './components/GrainOverlay';
 import Hero from './components/Hero';
-import Gallery from './components/Gallery';
-import Timeline from './components/Timeline';
+import HorizontalGallery from './components/HorizontalGallery';
+import TimelineCollage from './components/Timeline';
 import LoveNote from './components/LoveNote';
+import DoodleLayer from './components/DoodleLayer';
+import SVGFilters from './components/SVGFilters';
 
 function App() {
   const [isRevealed, setIsRevealed] = useState(false);
 
   useEffect(() => {
+    // Advanced Lenis config for that premium smooth scroll
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
+      wheelMultiplier: 1.1,
+      lerp: 0.1,
     });
 
     function raf(time) {
@@ -32,6 +37,8 @@ function App() {
   return (
     <main className="min-h-screen bg-cream selection:bg-rose selection:text-white">
       <GrainOverlay />
+      <SVGFilters />
+      <DoodleLayer />
       
       <AnimatePresence>
         {!isRevealed && (
@@ -42,25 +49,40 @@ function App() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isRevealed ? 1 : 0 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 1.5, delay: 0.5 }}
       >
-        <nav className="fixed top-0 left-0 w-full p-8 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
-          <div className="text-xl tracking-tighter font-serif">S + I</div>
-          <div className="text-xs uppercase tracking-widest">Our Second Month</div>
+        <nav className="fixed top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
+          <div className="text-2xl tracking-tighter font-serif font-bold italic">S+I</div>
+          <div className="text-xs uppercase tracking-widest font-bold">A Sixty Day Story</div>
         </nav>
 
-        <Gallery />
-        <Timeline />
+        {/* New Pinned Horizontal Section */}
+        <HorizontalGallery />
+        
+        {/* New Collage Section */}
+        <TimelineCollage />
+        
+        {/* Refined Love Note */}
         <LoveNote />
 
-        <footer className="py-20 text-center border-t border-charcoal/5 bg-cream">
-          <h2 className="text-8xl md:text-[12rem] text-charcoal/5 font-serif select-none pointer-events-none">
-            I Love You
+        <footer className="py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
+          <h2 className="text-8xl md:text-[18rem] text-charcoal/3 font-serif select-none pointer-events-none leading-none tracking-tighter">
+            Forever Always
           </h2>
-          <div className="mt-8 flex flex-col items-center">
-            <p className="text-charcoal/40 text-sm uppercase tracking-widest mb-4">Forever & Always</p>
-            <div className="w-1 h-12 bg-rose/20" />
-            <p className="mt-8 text-charcoal/20 text-xs">Created with love by Ishan</p>
+          <div className="mt-8 flex flex-col items-center relative z-10">
+            <p className="font-hand text-3xl text-rose mb-8 italic">You are the best gift I've ever received.</p>
+            <div className="w-px h-24 bg-linear-to-b from-rose/40 to-transparent" />
+            <p className="mt-12 text-charcoal/40 text-[10px] uppercase tracking-[0.3em] font-bold">
+              Two Month Anniversary — April 15, 2026
+            </p>
+            <p className="mt-4 text-charcoal/20 text-[9px]">Hand-crafted for Sreeparna by Ishan</p>
+          </div>
+
+          {/* Background decorative doodles */}
+          <div className="absolute top-1/2 left-1/4 -translate-y-1/2 opacity-5 pointer-events-none">
+            <svg width="200" height="200" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="40" stroke="currentColor" fill="none" strokeWidth="0.5" strokeDasharray="5 5" />
+            </svg>
           </div>
         </footer>
       </motion.div>

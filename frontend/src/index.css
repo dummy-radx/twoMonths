@@ -5,6 +5,7 @@
   --color-charcoal: #1A1A1A;
   --color-rose: #E8A5A5;
   --color-sage: #D1E8A5;
+  --color-ink: #2A3B4C;
   --font-serif: "Crimson Pro", serif;
   --font-sans: "Inter", sans-serif;
   --font-hand: "Patrick Hand", cursive;
@@ -31,6 +32,23 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .mask-reveal {
+    clip-path: inset(100% 0 0 0);
+    transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  
+  .mask-reveal.active {
+    clip-path: inset(0 0 0 0);
+  }
+
+  .rough-edge {
+    filter: url(#rough-filter);
+  }
+
+  .paper-shadow {
+    box-shadow: 20px 20px 60px #d4d2ce, -20px -20px 60px #ffffff;
+  }
 }
 
 /* Custom styles for the grain overlay */
@@ -41,7 +59,7 @@
   width: 300%;
   height: 300%;
   background-image: url("https://www.transparenttextures.com/patterns/p6-dark.png");
-  opacity: 0.05;
+  opacity: 0.08;
   pointer-events: none;
   z-index: 9999;
   animation: grain 8s steps(10) infinite;
@@ -60,6 +78,15 @@
   90% { transform:translate(-10%, 10%); }
 }
 
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
@@ -76,4 +103,9 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-charcoal);
+}
+
+/* Torn paper mask */
+.torn-paper {
+  mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,0 L100,0 L100,100 L0,100 Z M0,10 Q5,15 10,10 T20,10 T30,10 T40,10 T50,10 T60,10 T70,10 T80,10 T90,10 T100,10" fill="black"/></svg>');
 }

@@ -4,51 +4,66 @@ import { Heart } from 'lucide-react';
 
 const LoveNote = () => {
   return (
-    <section className="py-24 bg-cream flex items-center justify-center px-4 overflow-hidden">
+    <section className="py-40 bg-cream flex items-center justify-center px-4 overflow-hidden relative">
       <motion.div 
-        initial={{ rotate: -5, opacity: 0 }}
-        whileInView={{ rotate: -2, opacity: 1 }}
-        whileHover={{ rotate: 0, scale: 1.02 }}
-        transition={{ duration: 0.8 }}
+        initial={{ rotate: -5, opacity: 0, y: 50 }}
+        whileInView={{ rotate: -1, opacity: 1, y: 0 }}
+        whileHover={{ rotate: 0, scale: 1.05 }}
+        transition={{ duration: 1, ease: [0.77, 0, 0.175, 1] }}
         viewport={{ once: true }}
-        className="max-w-2xl w-full bg-white p-12 md:p-20 shadow-xl relative border border-charcoal/5"
+        className="max-w-3xl w-full bg-white p-12 md:p-24 shadow-[30px_30px_80px_rgba(0,0,0,0.05)] relative rough-edge"
       >
+        {/* Torn Edge Effect - CSS Pseudo-element style */}
+        <div className="absolute top-0 left-0 w-full h-8 bg-cream -translate-y-1/2 torn-paper" />
+        
         {/* Scrapbook elements */}
-        <div className="absolute -top-6 -right-6 w-24 h-24 bg-sage/20 rounded-full blur-2xl" />
-        <div className="absolute top-10 right-10 flex space-x-2">
-          <Heart className="text-rose w-6 h-6 fill-rose" />
-          <Heart className="text-rose/40 w-4 h-4" />
+        <div className="absolute top-12 right-12 opacity-30">
+          <svg width="60" height="60" viewBox="0 0 60 60">
+            <path d="M10,10 Q30,0 50,10 T30,50 T10,10" fill="none" stroke="currentColor" className="text-rose" strokeWidth="1" />
+          </svg>
         </div>
         
-        <header className="mb-12">
-          <p className="font-hand text-xl text-rose mb-2">April 15, 2026</p>
-          <h2 className="text-4xl md:text-5xl text-charcoal">Dear Sreeparna,</h2>
+        <header className="mb-16">
+          <p className="font-hand text-2xl text-rose mb-4 uppercase tracking-widest">April 15, 2026</p>
+          <h2 className="text-5xl md:text-7xl text-charcoal tracking-tighter">My Dearest Sreeparna,</h2>
         </header>
 
-        <div className="space-y-6 text-xl md:text-2xl font-serif text-charcoal/80 leading-relaxed">
+        <div className="space-y-8 text-2xl md:text-3xl font-serif text-charcoal/80 leading-relaxed text-balance">
           <p>
-            The last 60 days have been the most beautiful journey of my life. 
-            Every laugh, every conversation, and every moment shared with you 
-            is a memory I cherish deeply.
+            Sixty days might seem like a short time to the world, but to me, it's 
+            been a lifetime of discovery. Discovery of your smile, your kindness, 
+            and the way you make even the simplest moments feel extraordinary.
           </p>
           <p>
-            You make my world so much brighter just by being in it. 
-            This little website is a small token of my love for you, 
-            a place where we can keep our memories forever.
+            Every photo in this book, every memory we've made, is a treasure I'll 
+            carry with me. You are my favorite story, and I can't wait to see 
+            what the next chapters hold for us.
           </p>
-          <p>
-            Happy 2-month anniversary. Here's to us, and to many, many more.
+          <p className="italic font-bold text-rose">
+            Happy 2-month anniversary. 
           </p>
         </div>
 
-        <footer className="mt-16 pt-8 border-t border-charcoal/5">
-          <p className="font-hand text-3xl text-charcoal">With all my love,</p>
-          <p className="text-5xl text-charcoal mt-4 tracking-tighter">Ishan</p>
+        <footer className="mt-20 pt-12 border-t border-charcoal/5">
+          <p className="font-hand text-4xl text-charcoal">With all my love,</p>
+          <div className="relative inline-block">
+            <p className="text-6xl md:text-8xl text-charcoal mt-6 tracking-tighter">Ishan</p>
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ delay: 1, duration: 1 }}
+              className="absolute bottom-2 left-0 h-1 bg-rose/40"
+            />
+          </div>
         </footer>
         
-        {/* Tape effect */}
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-black/5 rotate-2 backdrop-blur-sm" />
+        {/* Washi Tape Effect */}
+        <div className="absolute -top-4 left-[10%] w-32 h-10 bg-sage/20 rotate-[-15deg] backdrop-blur-sm shadow-sm" />
+        <div className="absolute -bottom-4 right-[15%] w-24 h-8 bg-rose/10 rotate-20 backdrop-blur-sm shadow-sm" />
       </motion.div>
+
+      {/* Background visual element */}
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-rose/5 rounded-full blur-[100px] pointer-events-none" />
     </section>
   );
 };
