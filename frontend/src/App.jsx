@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import HorizontalGallery from './components/HorizontalGallery';
 import TimelineCollage from './components/Timeline';
 import LoveNote from './components/LoveNote';
+import SunflowerBouquet from './components/SunflowerBouquet';
 import DoodleLayer from './components/DoodleLayer';
 import SVGFilters from './components/SVGFilters';
 
@@ -81,6 +82,9 @@ function App() {
           
           {/* Refined Love Note */}
           <LoveNote />
+
+          {/* New Sunflower Bouquet */}
+          <SunflowerBouquet />
 
           <footer className="py-20 md:py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
           <h2 className="text-5xl md:text-8xl lg:text-[12rem] text-charcoal/80 font-serif select-none pointer-events-none leading-none tracking-tighter">
