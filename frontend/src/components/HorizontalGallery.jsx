@@ -13,16 +13,38 @@ const GALLERY_ITEMS = [
 
 const HorizontalGallery = () => {
   const targetRef = useRef(null);
+  const scrollRef = useRef(null);
+  const [scrollDistance, setScrollDistance] = React.useState(0);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
+  React.useLayoutEffect(() => {
+    const updateDistance = () => {
+      if (scrollRef.current) {
+        // Calculate total width minus the viewport width to get the scroll distance
+        const totalWidth = scrollRef.current.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        setScrollDistance(Math.max(0, totalWidth - viewportWidth + 96)); // Adding some padding for the px-24 (6rem = 96px)
+      }
+    };
+
+    updateDistance();
+    window.addEventListener('resize', updateDistance);
+    return () => window.removeEventListener('resize', updateDistance);
+  }, []);
+
+  const x = useTransform(scrollYProgress, [0, 1], [0, -scrollDistance]);
 
   return (
-    <section ref={targetRef} className="relative h-[500vh] bg-cream">
+    <section ref={targetRef} className="relative h-[600vh] bg-cream">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        <motion.div style={{ x }} className="flex gap-20 px-24">
+        <motion.div 
+          ref={scrollRef}
+          style={{ x }} 
+          className="flex gap-20 px-24"
+        >
           {GALLERY_ITEMS.map((item, index) => (
             <div 
               key={index} 
