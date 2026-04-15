@@ -83,9 +83,9 @@ function App() {
           <LoveNote />
 
           <footer className="py-20 md:py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
-            <h2 className="text-5xl md:text-[14rem] lg:text-[18rem] text-charcoal/80 font-serif select-none pointer-events-none leading-none tracking-tighter">
-              Forever Always
-            </h2>
+          <h2 className="text-5xl md:text-8xl lg:text-[12rem] text-charcoal/80 font-serif select-none pointer-events-none leading-none tracking-tighter">
+            Forever Always
+          </h2>
             <div className="mt-8 flex flex-col items-center relative z-10 px-4">
               <p className="font-hand text-2xl md:text-3xl text-rose mb-8 italic">You are the best gift I've ever received.</p>
               <div className="w-px h-24 bg-linear-to-b from-rose/40 to-transparent" />

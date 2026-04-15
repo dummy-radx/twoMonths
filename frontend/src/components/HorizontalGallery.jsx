@@ -40,7 +40,7 @@ const HorizontalGallery = () => {
 
   return (
     <section ref={targetRef} className="relative h-[600vh] bg-cream">
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+      <div className="sticky top-0 h-screen flex items-center overflow-hidden md:py-32 lg:py-40">
         <m.div 
           ref={scrollRef}
           style={{ x }} 
