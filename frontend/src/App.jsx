@@ -52,7 +52,25 @@ function App() {
         transition={{ duration: 1.5, delay: 0.5 }}
       >
         <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
-          <div className="text-xl md:text-2xl tracking-tighter font-serif font-bold italic">S+I</div>
+          <div className="relative group">
+            <div className="text-xl md:text-2xl tracking-tighter font-serif font-bold italic relative z-10 px-4 py-2">
+              S+I
+            </div>
+            <svg 
+              className="absolute inset-0 w-full h-full text-rose/80 -rotate-3 transition-transform duration-500 group-hover:scale-110" 
+              viewBox="0 0 100 100" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2"
+              strokeDasharray="500"
+              strokeDashoffset="0"
+            >
+              <path 
+                d="M50,90 C50,90 10,70 10,35 C10,15 35,10 50,30 C65,10 90,15 90,35 C90,70 50,90 50,90" 
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
           <div className="text-[10px] md:text-xs uppercase tracking-widest font-bold">A Sixty Day Story</div>
         </nav>
 
