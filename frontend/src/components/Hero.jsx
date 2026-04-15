@@ -62,7 +62,7 @@ const Hero = ({ onReveal }) => {
           variants={sentence}
           initial="hidden"
           animate="visible"
-          className="text-7xl md:text-[10rem] mb-6 tracking-tight text-charcoal flex justify-center flex-wrap font-hand font-bold"
+          className="text-6xl md:text-[10rem] mb-6 tracking-tight text-charcoal flex justify-center flex-wrap font-hand font-bold leading-tight"
         >
           {title.split("").map((char, index) => (
             <motion.span key={index} variants={letter}>

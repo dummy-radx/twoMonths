@@ -16,25 +16,23 @@ const LoveNote = () => {
         {/* Torn Edge Effect */}
         <div className="absolute top-0 left-0 w-full h-12 bg-cream -translate-y-1/2 torn-paper z-20" />
         
-        {/* Cute Scrapbook elements */}
-        <div className="absolute top-12 right-12 opacity-40">
-          <svg width="80" height="80" viewBox="0 0 100 100">
-            <path d="M20,20 Q50,0 80,20 T50,80 T20,20" fill="#FF8BA7" className="animate-float" />
-          </svg>
+        {/* Cute Scrapbook elements - Sunflower Bouquet */}
+        <div className="absolute top-12 right-12 md:top-24 md:right-24 w-16 h-16 md:w-32 md:h-32 opacity-80 z-20">
+          <img src="/sunflower_bouquet.png" alt="Sunflower Bouquet" className="w-full h-full object-contain animate-float" />
         </div>
 
         {/* Oreo Silk Sticker */}
         <motion.div 
           initial={{ scale: 0, rotate: 0 }}
           whileInView={{ scale: 1, rotate: 15 }}
-          className="absolute -top-10 -right-10 w-24 h-24 bg-[#4A2C2A] rounded-full border-4 border-white shadow-lg flex items-center justify-center text-white text-[10px] font-bold text-center p-2 leading-none uppercase tracking-tighter"
+          className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 z-30"
         >
-          Oreo<br/>Silk<br/>Sweetness
+          <img src="/oreo_silk.png" alt="Oreo Silk" className="w-full h-full object-contain drop-shadow-2xl" />
         </motion.div>
         
         <header className="mb-16 relative z-10">
-          <p className="font-hand text-3xl text-rose mb-4 tracking-widest">April 15, 2026</p>
-          <h2 className="text-6xl md:text-8xl text-charcoal tracking-tighter font-hand">My Sweet Sreeparna,</h2>
+          <p className="font-hand text-3xl text-rose mb-4 tracking-widest leading-none">April 15, 2026</p>
+          <h2 className="text-6xl md:text-8xl text-charcoal tracking-tighter font-hand leading-tight">My Sweet Sreeparna,</h2>
         </header>
 
         <div className="space-y-8 text-2xl md:text-4xl font-hand text-charcoal/90 leading-relaxed text-balance relative z-10">
@@ -73,13 +71,39 @@ const LoveNote = () => {
       </motion.div>
 
       {/* Decorative Teddy in the corner */}
-      <div className="absolute bottom-10 left-10 opacity-20 scale-150 rotate-12 pointer-events-none">
-        <svg width="100" height="100" viewBox="0 0 100 100" fill="#8B5E3C">
-          <circle cx="50" cy="55" r="35" />
-          <circle cx="50" cy="25" r="22" />
-          <circle cx="25" cy="15" r="12" />
-          <circle cx="75" cy="15" r="12" />
-        </svg>
+      <div className="absolute bottom-10 left-10 opacity-30 scale-150 rotate-12 pointer-events-none w-48 h-48">
+        <img src="/plushie.png" alt="Cute Plushie" className="w-full h-full object-contain" />
+      </div>
+
+      {/* Scrapbook Grid of Remaining Photos */}
+      <div className="absolute -bottom-[60%] lg:-bottom-[40%] left-0 w-full px-4 md:px-24 pointer-events-none">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16">
+          {[
+            { src: "/photo9.jpg", rotate: -5 },
+            { src: "/photo10.jpeg", rotate: 8 },
+            { src: "/photo11.jpeg", rotate: -3 },
+            { src: "/photo12.jpg", rotate: 5 },
+            { src: "/photo13.jpeg", rotate: -12 },
+            { src: "/photo14.jpg", rotate: 10 },
+            { src: "/photo15.jpg", rotate: -2 },
+          ].map((photo, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1, duration: 0.8 }}
+              style={{ rotate: photo.rotate }}
+              className="w-32 h-40 md:w-64 md:h-80 bg-white p-2 md:p-4 shadow-xl border border-charcoal/5 pointer-events-auto hover:z-50 hover:scale-110 transition-transform duration-500 rough-edge"
+            >
+              <div className="w-full h-[85%] overflow-hidden bg-charcoal/5">
+                <img src={photo.src} alt="" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+              </div>
+              <div className="h-[15%] flex items-center justify-center">
+                <Heart className="w-4 h-4 text-rose fill-rose" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

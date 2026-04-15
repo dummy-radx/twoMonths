@@ -4,32 +4,32 @@ import { motion } from 'framer-motion';
 const MEMORIES = [
   { 
     day: "Day 01", 
-    text: "The first hello. You were wearing that pretty smile.", 
-    img: "https://images.unsplash.com/photo-1518199266791-5375a83190b2?auto=format&fit=crop&w=600&q=80",
+    text: "The very first hello. That smile I'll never forget.", 
+    img: "/photo5.jpeg",
     tilt: -5,
     pos: "left",
     paper: "bg-white"
   },
   { 
     day: "Day 15", 
-    text: "Late night walks and talks about everything.", 
-    img: "https://images.unsplash.com/photo-1516589174184-c685266d4af4?auto=format&fit=crop&w=600&q=80",
+    text: "Lost in our own world, where time just didn't matter.", 
+    img: "/photo6.jpeg",
     tilt: 3,
     pos: "right",
     paper: "bg-sage/10"
   },
   { 
     day: "Day 32", 
-    text: "That rainy dinner... remember the lilies on the table?", 
-    img: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=600&q=80",
+    text: "The day everything started feeling like a dream.", 
+    img: "/photo7.jpeg",
     tilt: -2,
     pos: "center",
     paper: "bg-rose/5"
   },
   { 
     day: "Day 60", 
-    text: "Happy Anniversary, Sweetheart. To a thousand more.", 
-    img: "https://images.unsplash.com/photo-1518331647614-7a1f04cd34cf?auto=format&fit=crop&w=600&q=80",
+    text: "Happy 2 months, my love. To many more chapters.", 
+    img: "/photo8.jpeg",
     tilt: 5,
     pos: "right",
     paper: "bg-sunflower/5"

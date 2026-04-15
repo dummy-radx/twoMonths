@@ -3,27 +3,27 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 
 const GALLERY_ITEMS = [
   {
-    title: "The First Day",
-    subtitle: "Everything began here.",
-    image: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80",
+    title: "Perfect Moments",
+    subtitle: "Where it all felt so right.",
+    image: "/photo1.jpeg",
     color: "#F9F7F2"
   },
   {
-    title: "Sunday Mornings",
-    subtitle: "When the coffee tasted better.",
-    image: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80",
+    title: "Beautiful You",
+    subtitle: "Every time I see you, I fall again.",
+    image: "/photo2.jpeg",
     color: "#E8A5A5"
   },
   {
-    title: "Our Quiet Spot",
-    subtitle: "Where we decided everything.",
-    image: "https://images.unsplash.com/photo-1522673607200-164883eecd4c?auto=format&fit=crop&w=800&q=80",
+    title: "Our Quiet Space",
+    subtitle: "Where we can just be us.",
+    image: "/photo3.jpeg",
     color: "#D1E8A5"
   },
   {
-    title: "Under the Moon",
-    subtitle: "Promise of a thousand moons.",
-    image: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?auto=format&fit=crop&w=800&q=80",
+    title: "Golden Hour",
+    subtitle: "As bright as your presence in my life.",
+    image: "/photo4.jpeg",
     color: "#1A1A1A"
   }
 ];
@@ -43,7 +43,7 @@ const HorizontalGallery = () => {
           {GALLERY_ITEMS.map((item, index) => (
             <div 
               key={index} 
-              className="group relative shrink-0 w-[70vw] md:w-[45vw] lg:w-[35vw]"
+              className="group relative shrink-0 w-[85vw] md:w-[45vw] lg:w-[35vw]"
             >
               {/* Image with Mask Reveal */}
               <motion.div 
