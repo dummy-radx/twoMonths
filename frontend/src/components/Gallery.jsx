@@ -47,11 +47,11 @@ const Gallery = () => {
               viewport={{ once: true }}
               className={`relative ${index % 2 === 1 ? 'md:mt-24' : ''}`}
             >
-              <div className="group overflow-hidden bg-charcoal/5 aspect-4/5 relative">
+              <div className="group overflow-hidden bg-charcoal/5 aspect-4/5 relative cursor-pointer">
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                 />
                 <div className="absolute top-6 left-6 mix-blend-difference text-white">
                   <span className="font-hand text-xl">{item.date}</span>

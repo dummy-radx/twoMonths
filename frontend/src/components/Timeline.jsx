@@ -2,14 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MEMORIES = [
-  { day: "Day 30", text: "Halfway to sixty, and it felt like forever.", img: "/photo8.jpeg", tilt: 4, pos: "right", paper: "bg-sunflower/5" },
-  { day: "Day 35", text: "That sweet sparkle in your eyes.", img: "/photo9.jpg", tilt: -6, pos: "left", paper: "bg-white" },
-  { day: "Day 40", text: "The way you make my heart skip a beat.", img: "/photo10.jpeg", tilt: 1, pos: "right", paper: "bg-sage/10" },
-  { day: "Day 45", text: "Simple moments made extraordinary.", img: "/photo11.jpeg", tilt: -2, pos: "center", paper: "bg-rose/5" },
-  { day: "Day 50", text: "Counting down the days to our anniversary.", img: "/photo12.jpg", tilt: 3, pos: "right", paper: "bg-sunflower/5" },
-  { day: "Day 55", text: "Almost there, and my love only grows.", img: "/photo13.jpeg", tilt: -5, pos: "left", paper: "bg-white" },
-  { day: "Day 58", text: "The promise of a thousand more days.", img: "/photo14.jpg", tilt: 4, pos: "center", paper: "bg-sage/10" },
-  { day: "Day 60", text: "Happy 2 months, my love. Forever to go.", img: "/photo15.jpg", tilt: -2, pos: "right", paper: "bg-rose/5" }
+  { day: "Day 30", text: "Another sweet cafe date with my favorite person.", img: "/photo8.jpeg", tilt: 4, pos: "right", paper: "bg-sunflower/5" },
+  { day: "Day 35", text: "Beach nights and infinite smiles under the stars.", img: "/photo9.jpg", tilt: -6, pos: "left", paper: "bg-white" },
+  { day: "Day 40", text: "I'll always carry you through life, my love.", img: "/photo10.jpeg", tilt: 1, pos: "right", paper: "bg-sage/10" },
+  { day: "Day 45", text: "Stealing kisses on a perfect night out.", img: "/photo11.jpeg", tilt: -2, pos: "center", paper: "bg-rose/5" },
+  { day: "Day 50", text: "Even in the crowd, it's always just us.", img: "/photo12.jpg", tilt: 3, pos: "right", paper: "bg-sunflower/5" },
+  { day: "Day 55", text: "Your squishy face is the cutest thing ever.", img: "/photo13.jpeg", tilt: -5, pos: "left", paper: "bg-white" },
+  { day: "Day 58", text: "Wrapped in your arms, exactly where I belong.", img: "/photo14.jpg", tilt: 4, pos: "center", paper: "bg-sage/10" },
+  { day: "Day 60", text: "Happy 2 months! Here's to us, always.", img: "/photo15.jpg", tilt: -2, pos: "right", paper: "bg-rose/5" }
 ];
 
 const SmallSunflower = () => (
@@ -41,9 +41,10 @@ const TimelineCollage = () => {
                 style={{ rotate: memory.tilt }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
+                whileHover={{ y: -15, scale: 1.05, rotate: memory.tilt + 2, transition: { duration: 0.4 } }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-100px" }}
-                className="relative group group-hover:z-10"
+                className="relative group group-hover:z-10 cursor-pointer"
               >
                 {/* Image Mask Reveal with Paper Background */}
                 <motion.div 
@@ -56,7 +57,7 @@ const TimelineCollage = () => {
                   <img 
                     src={memory.img} 
                     alt={memory.text}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 rounded-sm"
+                    className="w-full h-full object-cover transition-all duration-700 rounded-sm"
                   />
                   
                   {/* Decorative Flower Accent */}

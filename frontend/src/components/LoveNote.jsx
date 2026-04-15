@@ -99,12 +99,13 @@ const LoveNote = () => {
               key={i}
               initial={{ opacity: 0, y: 100, scale: 0.8 }}
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover={{ scale: 1.1, rotate: photo.rotate + (i % 2 === 0 ? 5 : -5), zIndex: 50, transition: { duration: 0.3 } }}
               transition={{ delay: i * 0.05, duration: 0.8 }}
               style={{ rotate: photo.rotate }}
-              className="w-24 h-32 md:w-48 md:h-60 bg-white p-1 md:p-3 shadow-xl border border-charcoal/5 pointer-events-auto hover:z-50 hover:scale-110 transition-transform duration-500 rough-edge shrink-0"
+              className="w-24 h-32 md:w-48 md:h-60 bg-white p-1 md:p-3 shadow-2xl border border-charcoal/5 pointer-events-auto transition-shadow duration-500 rough-edge shrink-0 cursor-pointer group"
             >
               <div className="w-full h-[85%] overflow-hidden bg-charcoal/5">
-                <img src={photo.src} alt="" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
+                <img src={photo.src} alt="" className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" />
               </div>
               <div className="h-[15%] flex items-center justify-center">
                 <Heart className="w-3 h-3 md:w-4 md:h-4 text-rose fill-rose" />

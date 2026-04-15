@@ -2,13 +2,13 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const GALLERY_ITEMS = [
-  { title: "Perfect Moments", subtitle: "Where it all felt so right.", image: "/photo1.jpeg", color: "#F9F7F2" },
-  { title: "Beautiful You", subtitle: "Every time I see you, I fall again.", image: "/photo2.jpeg", color: "#E8A5A5" },
-  { title: "Our Quiet Space", subtitle: "Where we can just be us.", image: "/photo3.jpeg", color: "#D1E8A5" },
-  { title: "Golden Hour", subtitle: "As bright as your presence in my life.", image: "/photo4.jpeg", color: "#1A1A1A" },
-  { title: "First Hello", subtitle: "The start of something beautiful.", image: "/photo5.jpeg", color: "#F9F7F2" },
-  { title: "Late Night Walks", subtitle: "Where silence spoke volumes.", image: "/photo6.jpeg", color: "#E8A5A5" },
-  { title: "Rainy Days", subtitle: "Making our own sunshine together.", image: "/photo7.jpeg", color: "#D1E8A5" },
+  { title: "Cozy Mirror", subtitle: "Our first of many mirror selfies.", image: "/photo1.jpeg", color: "#F9F7F2" },
+  { title: "Cafe Kisses", subtitle: "Where coffee meets sweet moments.", image: "/photo2.jpeg", color: "#E8A5A5" },
+  { title: "Elegance", subtitle: "In black and lilac, simply perfect.", image: "/photo3.jpeg", color: "#D1E8A5" },
+  { title: "Sunny Shades", subtitle: "Rocking our traditional look.", image: "/photo4.jpeg", color: "#1A1A1A" },
+  { title: "Step by Step", subtitle: "Building our story together.", image: "/photo5.jpeg", color: "#F9F7F2" },
+  { title: "Leather & Leaves", subtitle: "Edgy vibes and green backgrounds.", image: "/photo6.jpeg", color: "#E8A5A5" },
+  { title: "Silly Us", subtitle: "Life's better when we're goofy.", image: "/photo7.jpeg", color: "#D1E8A5" },
 ];
 
 const HorizontalGallery = () => {
@@ -39,7 +39,7 @@ const HorizontalGallery = () => {
                 <img 
                   src={item.image} 
                   alt={item.title}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
+                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110 group-hover:contrast-[1.1]"
                 />
               </motion.div>
               
