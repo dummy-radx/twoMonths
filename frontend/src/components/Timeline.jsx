@@ -2,38 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MEMORIES = [
-  { 
-    day: "Day 01", 
-    text: "The very first hello. That smile I'll never forget.", 
-    img: "/photo5.jpeg",
-    tilt: -5,
-    pos: "left",
-    paper: "bg-white"
-  },
-  { 
-    day: "Day 15", 
-    text: "Lost in our own world, where time just didn't matter.", 
-    img: "/photo6.jpeg",
-    tilt: 3,
-    pos: "right",
-    paper: "bg-sage/10"
-  },
-  { 
-    day: "Day 32", 
-    text: "The day everything started feeling like a dream.", 
-    img: "/photo7.jpeg",
-    tilt: -2,
-    pos: "center",
-    paper: "bg-rose/5"
-  },
-  { 
-    day: "Day 60", 
-    text: "Happy 2 months, my love. To many more chapters.", 
-    img: "/photo8.jpeg",
-    tilt: 5,
-    pos: "right",
-    paper: "bg-sunflower/5"
-  }
+  { day: "Day 30", text: "Halfway to sixty, and it felt like forever.", img: "/photo8.jpeg", tilt: 4, pos: "right", paper: "bg-sunflower/5" },
+  { day: "Day 35", text: "That sweet sparkle in your eyes.", img: "/photo9.jpg", tilt: -6, pos: "left", paper: "bg-white" },
+  { day: "Day 40", text: "The way you make my heart skip a beat.", img: "/photo10.jpeg", tilt: 1, pos: "right", paper: "bg-sage/10" },
+  { day: "Day 45", text: "Simple moments made extraordinary.", img: "/photo11.jpeg", tilt: -2, pos: "center", paper: "bg-rose/5" },
+  { day: "Day 50", text: "Counting down the days to our anniversary.", img: "/photo12.jpg", tilt: 3, pos: "right", paper: "bg-sunflower/5" },
+  { day: "Day 55", text: "Almost there, and my love only grows.", img: "/photo13.jpeg", tilt: -5, pos: "left", paper: "bg-white" },
+  { day: "Day 58", text: "The promise of a thousand more days.", img: "/photo14.jpg", tilt: 4, pos: "center", paper: "bg-sage/10" },
+  { day: "Day 60", text: "Happy 2 months, my love. Forever to go.", img: "/photo15.jpg", tilt: -2, pos: "right", paper: "bg-rose/5" }
 ];
 
 const SmallSunflower = () => (

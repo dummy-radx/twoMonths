@@ -75,31 +75,39 @@ const LoveNote = () => {
         <img src="/plushie.png" alt="Cute Plushie" className="w-full h-full object-contain" />
       </div>
 
-      {/* Scrapbook Grid of Remaining Photos */}
-      <div className="absolute -bottom-[60%] lg:-bottom-[40%] left-0 w-full px-4 md:px-24 pointer-events-none">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-8 md:gap-16">
+      {/* Scrapbook Grid of All 15 Photos */}
+      <div className="absolute -bottom-[150%] lg:-bottom-full left-0 w-full px-4 md:px-24 pointer-events-none pb-40">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-4 md:gap-8">
           {[
-            { src: "/photo9.jpg", rotate: -5 },
-            { src: "/photo10.jpeg", rotate: 8 },
-            { src: "/photo11.jpeg", rotate: -3 },
-            { src: "/photo12.jpg", rotate: 5 },
-            { src: "/photo13.jpeg", rotate: -12 },
-            { src: "/photo14.jpg", rotate: 10 },
-            { src: "/photo15.jpg", rotate: -2 },
+            { src: "/photo1.jpeg", rotate: -5 },
+            { src: "/photo2.jpeg", rotate: 8 },
+            { src: "/photo3.jpeg", rotate: -3 },
+            { src: "/photo4.jpeg", rotate: 5 },
+            { src: "/photo5.jpeg", rotate: -12 },
+            { src: "/photo6.jpeg", rotate: 10 },
+            { src: "/photo7.jpeg", rotate: -2 },
+            { src: "/photo8.jpeg", rotate: 7 },
+            { src: "/photo9.jpg", rotate: -9 },
+            { src: "/photo10.jpeg", rotate: 4 },
+            { src: "/photo11.jpeg", rotate: -6 },
+            { src: "/photo12.jpg", rotate: 11 },
+            { src: "/photo13.jpeg", rotate: -4 },
+            { src: "/photo14.jpg", rotate: 6 },
+            { src: "/photo15.jpg", rotate: -8 },
           ].map((photo, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.8 }}
+              initial={{ opacity: 0, y: 100, scale: 0.8 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: i * 0.05, duration: 0.8 }}
               style={{ rotate: photo.rotate }}
-              className="w-32 h-40 md:w-64 md:h-80 bg-white p-2 md:p-4 shadow-xl border border-charcoal/5 pointer-events-auto hover:z-50 hover:scale-110 transition-transform duration-500 rough-edge"
+              className="w-24 h-32 md:w-48 md:h-60 bg-white p-1 md:p-3 shadow-xl border border-charcoal/5 pointer-events-auto hover:z-50 hover:scale-110 transition-transform duration-500 rough-edge shrink-0"
             >
               <div className="w-full h-[85%] overflow-hidden bg-charcoal/5">
                 <img src={photo.src} alt="" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" />
               </div>
               <div className="h-[15%] flex items-center justify-center">
-                <Heart className="w-4 h-4 text-rose fill-rose" />
+                <Heart className="w-3 h-3 md:w-4 md:h-4 text-rose fill-rose" />
               </div>
             </motion.div>
           ))}

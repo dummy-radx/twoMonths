@@ -2,30 +2,13 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const GALLERY_ITEMS = [
-  {
-    title: "Perfect Moments",
-    subtitle: "Where it all felt so right.",
-    image: "/photo1.jpeg",
-    color: "#F9F7F2"
-  },
-  {
-    title: "Beautiful You",
-    subtitle: "Every time I see you, I fall again.",
-    image: "/photo2.jpeg",
-    color: "#E8A5A5"
-  },
-  {
-    title: "Our Quiet Space",
-    subtitle: "Where we can just be us.",
-    image: "/photo3.jpeg",
-    color: "#D1E8A5"
-  },
-  {
-    title: "Golden Hour",
-    subtitle: "As bright as your presence in my life.",
-    image: "/photo4.jpeg",
-    color: "#1A1A1A"
-  }
+  { title: "Perfect Moments", subtitle: "Where it all felt so right.", image: "/photo1.jpeg", color: "#F9F7F2" },
+  { title: "Beautiful You", subtitle: "Every time I see you, I fall again.", image: "/photo2.jpeg", color: "#E8A5A5" },
+  { title: "Our Quiet Space", subtitle: "Where we can just be us.", image: "/photo3.jpeg", color: "#D1E8A5" },
+  { title: "Golden Hour", subtitle: "As bright as your presence in my life.", image: "/photo4.jpeg", color: "#1A1A1A" },
+  { title: "First Hello", subtitle: "The start of something beautiful.", image: "/photo5.jpeg", color: "#F9F7F2" },
+  { title: "Late Night Walks", subtitle: "Where silence spoke volumes.", image: "/photo6.jpeg", color: "#E8A5A5" },
+  { title: "Rainy Days", subtitle: "Making our own sunshine together.", image: "/photo7.jpeg", color: "#D1E8A5" },
 ];
 
 const HorizontalGallery = () => {
@@ -37,7 +20,7 @@ const HorizontalGallery = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-75%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-cream">
+    <section ref={targetRef} className="relative h-[500vh] bg-cream">
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-20 px-24">
           {GALLERY_ITEMS.map((item, index) => (
