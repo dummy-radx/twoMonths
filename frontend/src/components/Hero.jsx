@@ -98,7 +98,7 @@ const Hero = ({ onReveal }) => {
           </motion.div>
           
           <div className="absolute top-1/2 left-0 w-full h-1 bg-charcoal/5 -translate-y-1/2 pointer-events-none rounded-full" />
-          <p className="absolute -bottom-14 left-0 w-full text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.4em] opacity-40 whitespace-nowrap font-bold">
+          <p className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[120%] text-[9px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.4em] opacity-40 font-bold text-center leading-relaxed">
             Slide the sunflower to open our story
           </p>
         </div>
@@ -108,9 +108,9 @@ const Hero = ({ onReveal }) => {
       <motion.div 
         animate={{ y: [-20, 20, -20], rotate: [0, 5, 0] }}
         transition={{ repeat: Infinity, duration: 5 }}
-        className="absolute top-[10%] right-[10%] opacity-10"
+        className="absolute top-[5%] right-[5%] md:top-[10%] md:right-[10%] opacity-10"
       >
-        <svg width="200" height="200" viewBox="0 0 100 100" fill="#FFD93D">
+        <svg className="w-32 h-32 md:w-48 md:h-48" viewBox="0 0 100 100" fill="#FFD93D">
           <circle cx="50" cy="50" r="10" />
           {[...Array(8)].map((_, i) => (
             <path key={i} d="M50,10 L60,40 L40,40 Z" transform={`rotate(${i * 45} 50 50)`} />
@@ -121,9 +121,9 @@ const Hero = ({ onReveal }) => {
       <motion.div 
         animate={{ y: [20, -20, 20], rotate: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 6 }}
-        className="absolute bottom-[10%] left-[5%] opacity-5"
+        className="absolute bottom-[5%] left-[0%] md:bottom-[10%] md:left-[5%] opacity-5"
       >
-        <svg width="300" height="300" viewBox="0 0 100 100" fill="#2D2D2D">
+        <svg className="w-40 h-40 md:w-64 md:h-64" viewBox="0 0 100 100" fill="#2D2D2D">
           <circle cx="50" cy="50" r="40" />
         </svg>
       </motion.div>

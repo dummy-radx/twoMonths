@@ -20,13 +20,14 @@ const HorizontalGallery = () => {
     target: targetRef,
   });
 
-  React.useLayoutEffect(() => {
+    React.useLayoutEffect(() => {
     const updateDistance = () => {
       if (scrollRef.current) {
         // Calculate total width minus the viewport width to get the scroll distance
         const totalWidth = scrollRef.current.scrollWidth;
         const viewportWidth = window.innerWidth;
-        setScrollDistance(Math.max(0, totalWidth - viewportWidth + 96)); // Adding some padding for the px-24 (6rem = 96px)
+        const padding = viewportWidth < 768 ? 32 : 96; // 32px for px-8, 96px for px-24
+        setScrollDistance(Math.max(0, totalWidth - viewportWidth + padding));
       }
     };
 
@@ -43,7 +44,7 @@ const HorizontalGallery = () => {
         <motion.div 
           ref={scrollRef}
           style={{ x }} 
-          className="flex gap-20 px-24"
+          className="flex gap-10 md:gap-20 px-8 md:px-24"
         >
           {GALLERY_ITEMS.map((item, index) => (
             <div 
@@ -92,6 +93,22 @@ const HorizontalGallery = () => {
           className="h-full bg-rose origin-left"
         />
       </div>
+
+      {/* Scroll Hint */}
+      <motion.div 
+        style={{ opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]) }}
+        className="fixed bottom-10 right-10 z-50 flex items-center gap-4 text-rose md:hidden"
+      >
+        <span className="text-xs uppercase tracking-[0.2em] font-bold">Scroll</span>
+        <motion.div
+          animate={{ x: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5 }}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
