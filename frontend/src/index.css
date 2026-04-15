@@ -60,6 +60,18 @@
   .cute-shadow {
     box-shadow: 10px 10px 0px var(--color-rose);
   }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  .will-change-both {
+    will-change: transform, opacity;
+  }
 }
 
 /* Custom styles for the grain overlay */
@@ -101,10 +113,12 @@
 
 .animate-wiggle {
   animation: wiggle 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 .animate-float {
   animation: float 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Custom Scrollbar */

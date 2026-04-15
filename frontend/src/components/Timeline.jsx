@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const MEMORIES = [
   { day: "Day 30", text: "Another sweet cafe date with my favorite person.", img: "/photo8.jpeg", tilt: 4, pos: "right", paper: "bg-sunflower/5" },
@@ -37,7 +37,7 @@ const TimelineCollage = () => {
                 memory.pos === 'left' ? 'md:justify-start' : 'md:justify-center'
               }`}
             >
-              <motion.div 
+              <m.div 
                 style={{ rotate: memory.tilt }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -47,7 +47,7 @@ const TimelineCollage = () => {
                 className="relative group group-hover:z-10 cursor-pointer"
               >
                 {/* Image Mask Reveal with Paper Background */}
-                <motion.div 
+                <m.div 
                   initial={{ clipPath: "circle(0% at 50% 50%)" }}
                   whileInView={{ clipPath: "circle(100% at 50% 50%)" }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
@@ -57,6 +57,7 @@ const TimelineCollage = () => {
                   <img 
                     src={memory.img} 
                     alt={memory.text}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-all duration-700 rounded-sm"
                   />
                   
@@ -64,7 +65,7 @@ const TimelineCollage = () => {
                   <div className="absolute top-2 right-2 opacity-80 animate-wiggle">
                     <SmallSunflower />
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Handwritten Note Overlay - Sticky Tape Style */}
                 <div 
@@ -78,7 +79,7 @@ const TimelineCollage = () => {
                     {memory.text}
                   </p>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
           ))}
         </div>

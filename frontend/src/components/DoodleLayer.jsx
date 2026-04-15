@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 
 const Sunflower = () => (
   <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="animate-wiggle">
@@ -52,41 +52,41 @@ const DoodleLayer = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-40 overflow-hidden">
       {/* Sunflowers */}
-      <motion.div style={{ y: y1, rotate }} className="absolute top-[10%] left-[5%] md:left-[5%] scale-75 md:scale-100">
+      <m.div style={{ y: y1, rotate }} className="absolute top-[10%] left-[5%] md:left-[5%] scale-75 md:scale-100">
         <Sunflower />
-      </motion.div>
-      <motion.div style={{ y: y2 }} className="absolute bottom-[20%] right-[2%] md:right-[5%] opacity-30 md:opacity-40 scale-50 md:scale-100">
+      </m.div>
+      <m.div style={{ y: y2 }} className="absolute bottom-[20%] right-[2%] md:right-[5%] opacity-30 md:opacity-40 scale-50 md:scale-100">
         <Sunflower />
-      </motion.div>
+      </m.div>
 
       {/* Daisies */}
-      <motion.div style={{ y: y2, x: 20 }} className="absolute top-1/2 left-[5%] md:left-[10%] scale-75 md:scale-100">
+      <m.div style={{ y: y2, x: 20 }} className="absolute top-1/2 left-[5%] md:left-[10%] scale-75 md:scale-100">
         <Daisy />
-      </motion.div>
-      <motion.div style={{ y: y1 }} className="absolute top-[35%] right-[10%] md:top-[40%] md:right-[15%] scale-75 md:scale-100">
+      </m.div>
+      <m.div style={{ y: y1 }} className="absolute top-[35%] right-[10%] md:top-[40%] md:right-[15%] scale-75 md:scale-100">
         <Daisy />
-      </motion.div>
+      </m.div>
 
       {/* Teddies */}
-      <motion.div 
+      <m.div 
         style={{ y: y3, rotate: -15 }} 
         className="absolute bottom-40 left-[8%] md:left-[15%] opacity-40 md:opacity-60 scale-75 md:scale-100 hidden sm:block"
       >
         <Teddy />
-      </motion.div>
-      <motion.div 
+      </m.div>
+      <m.div 
         style={{ y: y2, rotate: 15 }} 
         className="absolute top-[15%] right-[15%] md:right-[20%] opacity-20 md:opacity-30 scale-50 md:scale-75"
       >
         <Teddy />
-      </motion.div>
+      </m.div>
 
       {/* Scattered hearts from before, kept for cuteness */}
-      <motion.div style={{ y: y2 }} className="absolute top-[70%] left-[20%] md:left-[30%]">
+      <m.div style={{ y: y2 }} className="absolute top-[70%] left-[20%] md:left-[30%]">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="#FF8BA7" className="animate-float">
           <path d="M10 18C10 18 18 13 18 8C18 3 13 3 10 7C7 3 2 3 2 8C2 13 10 18 10 18Z" />
         </svg>
-      </motion.div>
+      </m.div>
     </div>
   );
 };
