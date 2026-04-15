@@ -21,11 +21,11 @@ const SmallSunflower = () => (
 
 const TimelineCollage = () => {
   return (
-    <section className="py-40 bg-cream relative overflow-hidden px-4">
+    <section className="py-20 md:py-40 bg-cream relative overflow-hidden px-4">
       <div className="max-w-6xl mx-auto">
-        <header className="mb-40 text-center">
-          <h2 className="text-7xl md:text-9xl text-charcoal tracking-tighter mb-8 font-hand">Our Memory Book</h2>
-          <p className="font-hand text-3xl text-rose">Every moment is a sticker in my heart.</p>
+        <header className="mb-20 md:mb-40 text-center">
+          <h2 className="text-5xl md:text-9xl text-charcoal tracking-tighter mb-8 font-hand">Our Memory Book</h2>
+          <p className="font-hand text-2xl md:text-3xl text-rose">Every moment is a sticker in my heart.</p>
         </header>
 
         <div className="relative space-y-32 md:space-y-64">
@@ -52,7 +52,7 @@ const TimelineCollage = () => {
                   whileInView={{ clipPath: "circle(100% at 50% 50%)" }}
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   viewport={{ once: true }}
-                  className={`w-full max-w-sm md:max-w-md aspect-square ${memory.paper} p-6 shadow-2xl rough-edge overflow-hidden relative border border-black/5`}
+                  className={`w-full max-w-[280px] md:max-w-md aspect-square ${memory.paper} p-4 md:p-6 shadow-2xl rough-edge overflow-hidden relative border border-black/5`}
                 >
                   <img 
                     src={memory.img} 
@@ -68,13 +68,13 @@ const TimelineCollage = () => {
 
                 {/* Handwritten Note Overlay - Sticky Tape Style */}
                 <div 
-                  className={`absolute -bottom-10 ${index % 2 === 0 ? '-right-16' : '-left-16'} bg-white p-8 shadow-xl border border-charcoal/10 max-w-[240px] rough-edge z-20`}
+                  className={`absolute -bottom-10 ${index % 2 === 0 ? '-right-4 md:-right-16' : '-left-4 md:-left-16'} bg-white p-6 md:p-8 shadow-xl border border-charcoal/10 max-w-[200px] md:max-w-[240px] rough-edge z-20`}
                 >
                   {/* Fake Washi Tape */}
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-20 h-6 bg-rose/20 rotate-[-5deg] backdrop-blur-sm" />
                   
-                  <span className="block font-bold text-rose text-sm uppercase tracking-widest mb-4 font-sans">{memory.day}</span>
-                  <p className="font-hand text-3xl text-charcoal/80 leading-tight">
+                  <span className="block font-bold text-rose text-[10px] md:text-sm uppercase tracking-widest mb-3 md:mb-4 font-sans">{memory.day}</span>
+                  <p className="font-hand text-2xl md:text-3xl text-charcoal/80 leading-tight">
                     {memory.text}
                   </p>
                 </div>

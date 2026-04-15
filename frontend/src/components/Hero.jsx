@@ -62,7 +62,7 @@ const Hero = ({ onReveal }) => {
           variants={sentence}
           initial="hidden"
           animate="visible"
-          className="text-6xl md:text-[10rem] mb-6 tracking-tight text-charcoal flex justify-center flex-wrap font-hand font-bold leading-tight"
+          className="text-4xl md:text-[10rem] mb-4 md:mb-6 tracking-tight text-charcoal flex justify-center flex-wrap font-hand font-bold leading-tight"
         >
           {title.split("").map((char, index) => (
             <motion.span key={index} variants={letter}>
@@ -75,30 +75,30 @@ const Hero = ({ onReveal }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.8, duration: 1 }}
-          className="font-hand text-3xl md:text-5xl text-rose mb-16"
+          className="font-hand text-2xl md:text-5xl text-rose mb-12 md:mb-16"
         >
           Sixty days of us.
         </motion.p>
         
-        <div className="relative inline-block mt-8">
+        <div className="relative inline-block mt-8 w-[280px] md:w-80">
           <motion.div
             drag="x"
-            dragConstraints={{ left: 0, right: 300 }}
+            dragConstraints={{ left: 0, right: window.innerWidth < 768 ? 180 : 220 }}
             style={{ x: dragX }}
             onDragEnd={handleDragEnd}
-            className="w-24 h-24 bg-sunflower rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing relative z-10 shadow-lg border-4 border-white"
+            className="w-20 h-20 md:w-24 md:h-24 bg-sunflower rounded-full flex items-center justify-center cursor-grab active:cursor-grabbing relative z-10 shadow-lg border-4 border-white"
           >
             <motion.div 
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="text-3xl"
+              className="text-2xl md:text-3xl"
             >
               🌻
             </motion.div>
           </motion.div>
           
-          <div className="absolute top-1/2 left-0 w-80 h-1 bg-charcoal/5 -translate-y-1/2 pointer-events-none rounded-full" />
-          <p className="absolute -bottom-14 left-0 w-full text-xs uppercase tracking-[0.4em] opacity-40 whitespace-nowrap font-bold">
+          <div className="absolute top-1/2 left-0 w-full h-1 bg-charcoal/5 -translate-y-1/2 pointer-events-none rounded-full" />
+          <p className="absolute -bottom-14 left-0 w-full text-[10px] md:text-xs uppercase tracking-[0.3em] md:tracking-[0.4em] opacity-40 whitespace-nowrap font-bold">
             Slide the sunflower to open our story
           </p>
         </div>

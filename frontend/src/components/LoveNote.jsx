@@ -4,20 +4,20 @@ import { Heart } from 'lucide-react';
 
 const LoveNote = () => {
   return (
-    <section className="py-40 bg-cream flex items-center justify-center px-4 overflow-hidden relative">
+    <section className="py-20 md:py-40 bg-cream flex items-center justify-center px-4 overflow-hidden relative">
       <motion.div 
         initial={{ rotate: -5, opacity: 0, y: 50 }}
         whileInView={{ rotate: -1, opacity: 1, y: 0 }}
         whileHover={{ rotate: 0, scale: 1.05 }}
         transition={{ duration: 1, ease: [0.77, 0, 0.175, 1] }}
         viewport={{ once: true }}
-        className="max-w-3xl w-full p-12 md:p-24 shadow-[30px_30px_80px_rgba(0,0,0,0.1)] relative border border-charcoal/10 sandpaper-texture"
+        className="max-w-3xl w-full p-6 md:p-24 shadow-[30px_30px_80px_rgba(0,0,0,0.1)] relative border border-charcoal/10 sandpaper-texture"
       >
         {/* Torn Edge Effect */}
         <div className="absolute top-0 left-0 w-full h-12 bg-cream -translate-y-1/2 torn-paper z-20" />
         
         {/* Cute Scrapbook elements - Sunflower Bouquet */}
-        <div className="absolute top-12 right-12 md:top-24 md:right-24 w-16 h-16 md:w-32 md:h-32 opacity-80 z-20">
+        <div className="absolute top-6 right-6 md:top-24 md:right-24 w-16 h-16 md:w-32 md:h-32 opacity-80 z-20">
           <img src="/sunflower_bouquet.png" alt="Sunflower Bouquet" className="w-full h-full object-contain animate-float" />
         </div>
 
@@ -25,17 +25,17 @@ const LoveNote = () => {
         <motion.div 
           initial={{ scale: 0, rotate: 0 }}
           whileInView={{ scale: 1, rotate: 15 }}
-          className="absolute -top-10 -right-10 w-32 h-32 md:w-48 md:h-48 z-30"
+          className="absolute -top-6 -right-6 md:-top-10 md:-right-10 w-24 h-24 md:w-48 md:h-48 z-30"
         >
           <img src="/oreo_silk.png" alt="Oreo Silk" className="w-full h-full object-contain drop-shadow-2xl" />
         </motion.div>
         
-        <header className="mb-16 relative z-10">
-          <p className="font-hand text-3xl text-rose mb-4 tracking-widest leading-none">April 15, 2026</p>
-          <h2 className="text-6xl md:text-8xl text-charcoal tracking-tighter font-hand leading-tight">My Sweet Sreeparna,</h2>
+        <header className="mb-12 md:mb-16 relative z-10">
+          <p className="font-hand text-2xl md:text-3xl text-rose mb-3 MD:MB-4 tracking-widest leading-none">April 15, 2026</p>
+          <h2 className="text-4xl md:text-8xl text-charcoal tracking-tighter font-hand leading-tight">My Sweet Sreeparna,</h2>
         </header>
 
-        <div className="space-y-8 text-2xl md:text-4xl font-hand text-charcoal/90 leading-relaxed text-balance relative z-10">
+        <div className="space-y-6 md:space-y-8 text-xl md:text-4xl font-hand text-charcoal/90 leading-relaxed text-balance relative z-10">
           <p>
             It's been two months of laughter, deep talks, and all our favorite things. 
             From the flowers I know you love—the sunflowers, the lilies, and the daisies—to 
@@ -50,10 +50,10 @@ const LoveNote = () => {
           </p>
         </div>
 
-        <footer className="mt-24 pt-12 border-t border-charcoal/10 relative z-10">
-          <p className="font-hand text-4xl text-charcoal/60">With all my love,</p>
+        <footer className="mt-16 md:mt-24 pt-12 border-t border-charcoal/10 relative z-10">
+          <p className="font-hand text-3xl md:text-4xl text-charcoal/60">With all my love,</p>
           <div className="relative inline-block">
-            <p className="text-7xl md:text-9xl text-charcoal mt-6 tracking-tighter font-hand">Ishan</p>
+            <p className="text-6xl md:text-9xl text-charcoal mt-4 md:mt-6 tracking-tighter font-hand">Ishan</p>
             <motion.div 
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
@@ -71,7 +71,7 @@ const LoveNote = () => {
       </motion.div>
 
       {/* Decorative Teddy in the corner */}
-      <div className="absolute bottom-10 left-10 opacity-30 scale-150 rotate-12 pointer-events-none w-48 h-48">
+      <div className="absolute bottom-4 left-4 md:bottom-10 md:left-10 opacity-20 md:opacity-30 scale-110 md:scale-150 rotate-12 pointer-events-none w-32 h-32 md:w-48 md:h-48">
         <img src="/plushie.png" alt="Cute Plushie" className="w-full h-full object-contain" />
       </div>
 

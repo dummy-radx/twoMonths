@@ -51,9 +51,9 @@ function App() {
         animate={{ opacity: isRevealed ? 1 : 0 }}
         transition={{ duration: 1.5, delay: 0.5 }}
       >
-        <nav className="fixed top-0 left-0 w-full p-8 md:p-12 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
-          <div className="text-2xl tracking-tighter font-serif font-bold italic">S+I</div>
-          <div className="text-xs uppercase tracking-widest font-bold">A Sixty Day Story</div>
+        <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
+          <div className="text-xl md:text-2xl tracking-tighter font-serif font-bold italic">S+I</div>
+          <div className="text-[10px] md:text-xs uppercase tracking-widest font-bold">A Sixty Day Story</div>
         </nav>
 
         {/* New Pinned Horizontal Section */}
@@ -65,12 +65,12 @@ function App() {
         {/* Refined Love Note */}
         <LoveNote />
 
-        <footer className="py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
-          <h2 className="text-8xl md:text-[18rem] text-charcoal/3 font-serif select-none pointer-events-none leading-none tracking-tighter">
+        <footer className="py-20 md:py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
+          <h2 className="text-5xl md:text-[18rem] text-charcoal/3 font-serif select-none pointer-events-none leading-none tracking-tighter">
             Forever Always
           </h2>
-          <div className="mt-8 flex flex-col items-center relative z-10">
-            <p className="font-hand text-3xl text-rose mb-8 italic">You are the best gift I've ever received.</p>
+          <div className="mt-8 flex flex-col items-center relative z-10 px-4">
+            <p className="font-hand text-2xl md:text-3xl text-rose mb-8 italic">You are the best gift I've ever received.</p>
             <div className="w-px h-24 bg-linear-to-b from-rose/40 to-transparent" />
             <p className="mt-12 text-charcoal/40 text-[10px] uppercase tracking-[0.3em] font-bold">
               Two Month Anniversary — April 15, 2026
