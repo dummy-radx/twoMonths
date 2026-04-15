@@ -52,21 +52,19 @@ function App() {
         transition={{ duration: 1.5, delay: 0.5 }}
       >
         <nav className="fixed top-0 left-0 w-full p-6 md:p-12 flex justify-between items-center z-50 mix-blend-difference text-white pointer-events-none">
-          <div className="relative group">
-            <div className="text-xl md:text-2xl tracking-tighter font-serif font-bold italic relative z-10 px-4 py-2">
+          <div className="relative group flex items-center justify-center">
+            <div className="text-xl md:text-3xl tracking-tighter font-serif font-bold italic relative z-10 px-6 py-4">
               S+I
             </div>
             <svg 
-              className="absolute inset-0 w-full h-full text-rose/80 -rotate-3 transition-transform duration-500 group-hover:scale-110" 
+              className="absolute inset-0 w-full h-full text-rose -rotate-3 transition-transform duration-500 group-hover:scale-110" 
               viewBox="0 0 100 100" 
               fill="none" 
               stroke="currentColor" 
-              strokeWidth="2"
-              strokeDasharray="500"
-              strokeDashoffset="0"
+              strokeWidth="1.5"
             >
               <path 
-                d="M50,90 C50,90 10,70 10,35 C10,15 35,10 50,30 C65,10 90,15 90,35 C90,70 50,90 50,90" 
+                d="M50,92 C50,92 5,72 5,35 C5,12 35,8 50,30 C65,8 95,12 95,35 C95,72 50,92 50,92" 
                 strokeLinecap="round"
               />
             </svg>
@@ -84,7 +82,7 @@ function App() {
         <LoveNote />
 
         <footer className="py-20 md:py-40 text-center border-t border-charcoal/5 bg-cream relative overflow-hidden">
-          <h2 className="text-5xl md:text-[18rem] text-charcoal/3 font-serif select-none pointer-events-none leading-none tracking-tighter">
+          <h2 className="text-5xl md:text-[14rem] lg:text-[18rem] text-charcoal/80 font-serif select-none pointer-events-none leading-none tracking-tighter">
             Forever Always
           </h2>
           <div className="mt-8 flex flex-col items-center relative z-10 px-4">
