@@ -1,14 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #F9F7F2;
-  --color-charcoal: #1A1A1A;
-  --color-rose: #E8A5A5;
-  --color-sage: #D1E8A5;
-  --color-ink: #2A3B4C;
+  --color-cream: #FDFBF7;
+  --color-charcoal: #2D2D2D;
+  --color-rose: #FF8BA7;
+  --color-sage: #B8E0D2;
+  --color-sunflower: #FFD93D;
+  --color-ink: #333333;
+  --color-sand: #E7D7C1;
+  
+  --font-hand: "Caveat", cursive;
   --font-serif: "Crimson Pro", serif;
-  --font-sans: "Inter", sans-serif;
-  --font-hand: "Patrick Hand", cursive;
+  --font-sans: "Quicksand", sans-serif;
+  --font-oldhand: "Patrick Hand", cursive;
 }
 
 @layer base {
@@ -19,12 +23,12 @@
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-sans antialiased text-lg;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
+    @apply font-hand font-bold;
   }
 }
 
@@ -46,8 +50,15 @@
     filter: url(#rough-filter);
   }
 
-  .paper-shadow {
-    box-shadow: 20px 20px 60px #d4d2ce, -20px -20px 60px #ffffff;
+  .sandpaper-texture {
+    background-color: var(--color-sand);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-blend-mode: multiply;
+    opacity: 0.95;
+  }
+
+  .cute-shadow {
+    box-shadow: 10px 10px 0px var(--color-rose);
   }
 }
 
@@ -59,7 +70,7 @@
   width: 300%;
   height: 300%;
   background-image: url("https://www.transparenttextures.com/patterns/p6-dark.png");
-  opacity: 0.08;
+  opacity: 0.1;
   pointer-events: none;
   z-index: 9999;
   animation: grain 8s steps(10) infinite;
@@ -79,17 +90,26 @@
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: rotate(-1deg); }
-  50% { transform: rotate(1deg); }
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-wiggle {
   animation: wiggle 3s ease-in-out infinite;
 }
 
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -99,10 +119,6 @@
 ::-webkit-scrollbar-thumb {
   background: var(--color-rose);
   border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-charcoal);
 }
 
 /* Torn paper mask */
